@@ -50,7 +50,7 @@ const admin = {
             id: 'admindashboard',
             title: <FormattedMessage id="Dashboards" />,
             type: 'item',
-            url: '/admin/dashboard',
+            url: '/admin/admindashboard',
             icon: icons.IconChartDots,
             breadcrumbs: false
         },

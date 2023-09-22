@@ -1,69 +1,11 @@
 import { Link } from 'react-router-dom';
-
-// material-ui
 import { useTheme } from '@mui/material/styles';
 import { Divider, Grid, Stack, Typography, useMediaQuery } from '@mui/material';
-
-// project imports
 import AuthWrapper1 from '../AuthWrapper1';
 import AuthCardWrapper from '../AuthCardWrapper';
 import AuthLogin from '../auth-forms/AuthLogin';
 import Logo from 'ui-component/Logo';
 import BackgroundPattern1 from 'ui-component/cards/BackgroundPattern1';
-//import AuthSlider from 'ui-component/cards/AuthSlider';
-
-// assets
-//import AuthBlueCard from 'assets/images/auth/auth-blue-card.svg';
-//import AuthPurpleCard from 'assets/images/auth/auth-purple-card.svg';
-
-// styles
-// const PurpleWrapper = styled('span')({
-//     '&:after': {
-//         content: '""',
-//         position: 'absolute',
-//         top: '32%',
-//         left: '40%',
-//         width: 313,
-//         backgroundSize: 380,
-//         height: 280,
-//         backgroundImage: `url(${AuthPurpleCard})`,
-//         backgroundRepeat: 'no-repeat',
-//         backgroundPosition: 'center',
-//         animation: '15s wings ease-in-out infinite'
-//     },
-//     '&:before': {
-//         content: '""',
-//         position: 'absolute',
-//         top: '23%',
-//         left: '37%',
-//         width: 243,
-//         height: 210,
-//         backgroundSize: 380,
-//         backgroundImage: `url(${AuthBlueCard})`,
-//         backgroundRepeat: 'no-repeat',
-//         backgroundPosition: 'center',
-//         animation: '15s wings ease-in-out infinite',
-//         animationDelay: '1s'
-//     }
-// });
-
-// carousel items
-// const items = [
-//     {
-//         title: 'Components Based Design System',
-//         description: 'Powerful and easy to use multipurpose theme'
-//     },
-//     {
-//         title: 'Components Based Design System',
-//         description: 'Powerful and easy to use multipurpose theme'
-//     },
-//     {
-//         title: 'Components Based Design System',
-//         description: 'Powerful and easy to use multipurpose theme'
-//     }
-// ];
-
-// ================================|| AUTH1 - LOGIN ||================================ //
 
 const Login = () => {
     const theme = useTheme();
@@ -72,6 +14,22 @@ const Login = () => {
     return (
         <AuthWrapper1>
             <Grid container justifyContent="space-between" alignItems="center" sx={{ minHeight: '100vh' }}>
+                <Grid item md={6} lg={5} sx={{ position: 'relative', alignSelf: 'stretch', display: { xs: 'none', md: 'block' } }}>
+                    <BackgroundPattern1>
+                        <Grid item container alignItems="flex-end" justifyContent="center" spacing={3}>
+                            <Grid item xs={12}>
+                                <span />
+                            </Grid>
+                            <Grid item xs={12}>
+                                <Grid item container justifyContent="center" sx={{ pb: 8 }}>
+                                    <Grid item xs={10} lg={8} sx={{ '& .slick-list': { pb: 2 } }}>
+                                        {/* Render any other components you want here */}
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </BackgroundPattern1>
+                </Grid>
                 <Grid item container justifyContent="center" md={6} lg={7} sx={{ my: 3 }}>
                     <AuthCardWrapper>
                         <Grid container spacing={2} justifyContent="center">
@@ -113,36 +71,10 @@ const Login = () => {
                                 <Divider />
                             </Grid>
                             <Grid item xs={12}>
-                                {/* <Grid item container direction="column" alignItems="flex-end" xs={12}>
-                                    <Typography
-                                        component={Link}
-                                        to="/pages/register/register1"
-                                        variant="subtitle1"
-                                        sx={{ textDecoration: 'none' }}
-                                    >
-                                        Don&apos;t have an account?
-                                    </Typography>
-                                </Grid> */}
+                                {/* Render any other components you want here */}
                             </Grid>
                         </Grid>
                     </AuthCardWrapper>
-                </Grid>
-                <Grid item md={6} lg={5} sx={{ position: 'relative', alignSelf: 'stretch', display: { xs: 'none', md: 'block' } }}>
-                    <BackgroundPattern1>
-                        <Grid item container alignItems="flex-end" justifyContent="center" spacing={3}>
-                            <Grid item xs={12}>
-                                <span />
-                                {/* <PurpleWrapper /> */}
-                            </Grid>
-                            <Grid item xs={12}>
-                                <Grid item container justifyContent="center" sx={{ pb: 8 }}>
-                                    <Grid item xs={10} lg={8} sx={{ '& .slick-list': { pb: 2 } }}>
-                                        {/* <AuthSlider items={items} /> */}
-                                    </Grid>
-                                </Grid>
-                            </Grid>
-                        </Grid>
-                    </BackgroundPattern1>
                 </Grid>
             </Grid>
         </AuthWrapper1>

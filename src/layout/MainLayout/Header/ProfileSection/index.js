@@ -1,27 +1,27 @@
 import { useEffect, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+//import { useNavigate } from 'react-router-dom';
 
 // material-ui
 import { useTheme } from '@mui/material/styles';
 import {
-    Avatar,
+    // Avatar,
     Box,
     Card,
-    CardContent,
+    //CardContent,
     Chip,
     ClickAwayListener,
     Divider,
-    Grid,
-    InputAdornment,
+    // Grid,
+    //InputAdornment,
     List,
     ListItemButton,
     ListItemIcon,
     ListItemText,
-    OutlinedInput,
+    //OutlinedInput,
     Paper,
     Popper,
     Stack,
-    Switch,
+    //Switch,
     Typography
 } from '@mui/material';
 
@@ -32,12 +32,12 @@ import PerfectScrollbar from 'react-perfect-scrollbar';
 // project imports
 import MainCard from 'ui-component/cards/MainCard';
 import Transitions from 'ui-component/extended/Transitions';
-import UpgradePlanCard from './UpgradePlanCard';
+//import UpgradePlanCard from './UpgradePlanCard';
 import useAuth from 'hooks/useAuth';
-import User1 from 'assets/images/users/user-round.svg';
+//import User1 from 'assets/images/users/user-round.svg';
 
 // assets
-import { IconLogout, IconSearch, IconSettings, IconUser } from '@tabler/icons';
+import { IconLogout, IconSettings } from '@tabler/icons';
 import useConfig from 'hooks/useConfig';
 
 // ==============================|| PROFILE MENU ||============================== //
@@ -45,12 +45,12 @@ import useConfig from 'hooks/useConfig';
 const ProfileSection = () => {
     const theme = useTheme();
     const { borderRadius } = useConfig();
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
-    const [sdm, setSdm] = useState(true);
-    const [value, setValue] = useState('');
-    const [notification, setNotification] = useState(false);
-    const [selectedIndex, setSelectedIndex] = useState(-1);
+    //const [sdm, setSdm] = useState(true);
+    //const [value, setValue] = useState('');
+    //const [notification, setNotification] = useState(false);
+    const [selectedIndex] = useState(-1);
     const { logout, user } = useAuth();
     const [open, setOpen] = useState(false);
     /**
@@ -71,14 +71,14 @@ const ProfileSection = () => {
         }
         setOpen(false);
     };
-    const handleListItemClick = (event, index, route = '') => {
-        setSelectedIndex(index);
-        handleClose(event);
+    // const handleListItemClick = (event, index, route = '') => {
+    //     setSelectedIndex(index);
+    //     handleClose(event);
 
-        if (route && route !== '') {
-            navigate(route);
-        }
-    };
+    //     if (route && route !== '') {
+    //         navigate(route);
+    //     }
+    // };
     const handleToggle = () => {
         setOpen((prevOpen) => !prevOpen);
     };
@@ -114,21 +114,21 @@ const ProfileSection = () => {
                         lineHeight: 0
                     }
                 }}
-                icon={
-                    <Avatar
-                        src={User1}
-                        sx={{
-                            ...theme.typography.mediumAvatar,
-                            margin: '8px 0 8px 8px !important',
-                            cursor: 'pointer'
-                        }}
-                        ref={anchorRef}
-                        aria-controls={open ? 'menu-list-grow' : undefined}
-                        aria-haspopup="true"
-                        color="inherit"
-                        alt="user-account"
-                    />
-                }
+                // icon={
+                //     <Avatar
+                //         src={User1}
+                //         sx={{
+                //             ...theme.typography.mediumAvatar,
+                //             margin: '8px 0 8px 8px !important',
+                //             cursor: 'pointer'
+                //         }}
+                //         ref={anchorRef}
+                //         aria-controls={open ? 'menu-list-grow' : undefined}
+                //         aria-haspopup="true"
+                //         color="inherit"
+                //         alt="user-account"
+                //     />
+                // }
                 label={<IconSettings stroke={1.5} size="24px" color={theme.palette.primary.main} />}
                 variant="outlined"
                 ref={anchorRef}
@@ -163,14 +163,14 @@ const ProfileSection = () => {
                                         <Box sx={{ p: 2, pb: 0 }}>
                                             <Stack>
                                                 <Stack direction="row" spacing={0.5} alignItems="center">
-                                                    <Typography variant="h4">Good Morning,</Typography>
+                                                    <Typography variant="h4">Welcome</Typography>
                                                     <Typography component="span" variant="h4" sx={{ fontWeight: 400 }}>
                                                         {user?.name}
                                                     </Typography>
                                                 </Stack>
                                                 <Typography variant="subtitle2">Project Admin</Typography>
                                             </Stack>
-                                            <OutlinedInput
+                                            {/* <OutlinedInput
                                                 sx={{ width: '100%', pr: 1, pl: 2, my: 2 }}
                                                 id="input-search-profile"
                                                 value={value}
@@ -185,7 +185,7 @@ const ProfileSection = () => {
                                                 inputProps={{
                                                     'aria-label': 'weight'
                                                 }}
-                                            />
+                                            /> */}
                                             <Divider />
                                         </Box>
                                         <PerfectScrollbar
@@ -196,7 +196,7 @@ const ProfileSection = () => {
                                             }}
                                         >
                                             <Box sx={{ p: 2, pt: 0 }}>
-                                                <UpgradePlanCard />
+                                                {/* <UpgradePlanCard /> */}
                                                 <Divider />
                                                 <Card
                                                     sx={{
@@ -207,7 +207,7 @@ const ProfileSection = () => {
                                                         my: 2
                                                     }}
                                                 >
-                                                    <CardContent>
+                                                    {/* <CardContent>
                                                         <Grid container spacing={3} direction="column">
                                                             <Grid item>
                                                                 <Grid item container alignItems="center" justifyContent="space-between">
@@ -241,7 +241,7 @@ const ProfileSection = () => {
                                                                 </Grid>
                                                             </Grid>
                                                         </Grid>
-                                                    </CardContent>
+                                                    </CardContent> */}
                                                 </Card>
                                                 <Divider />
                                                 <List
@@ -260,7 +260,7 @@ const ProfileSection = () => {
                                                         }
                                                     }}
                                                 >
-                                                    <ListItemButton
+                                                    {/* <ListItemButton
                                                         sx={{ borderRadius: `${borderRadius}px` }}
                                                         selected={selectedIndex === 0}
                                                         onClick={(event) => handleListItemClick(event, 0, '/user/account-profile/profile1')}
@@ -303,7 +303,7 @@ const ProfileSection = () => {
                                                                 </Grid>
                                                             }
                                                         />
-                                                    </ListItemButton>
+                                                    </ListItemButton> */}
                                                     <ListItemButton
                                                         sx={{ borderRadius: `${borderRadius}px` }}
                                                         selected={selectedIndex === 4}
